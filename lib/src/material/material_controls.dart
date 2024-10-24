@@ -167,6 +167,7 @@ class _MaterialControlsState extends State<MaterialControls>
         onTap: () async {
           Navigator.pop(context);
           _onSpeedButtonTap();
+          chewieController.onTapPlaybackSpeed?.call();
         },
         iconData: Icons.speed,
         title: chewieController.optionsTranslation?.playbackSpeedButtonText ??
