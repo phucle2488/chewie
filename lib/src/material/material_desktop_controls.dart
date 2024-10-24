@@ -158,6 +158,7 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
         onTap: () async {
           Navigator.pop(context);
           _onSpeedButtonTap();
+          chewieController.onTapPlaybackSpeed?.call();
         },
         iconData: Icons.speed,
         title: chewieController.optionsTranslation?.playbackSpeedButtonText ??
