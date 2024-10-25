@@ -300,6 +300,7 @@ class _MaterialControlsState extends State<MaterialControls>
                     ),
                   ),
                 ),
+              chewieController.adWidget ?? const SizedBox(height: 10)
             ],
           ),
         ),
@@ -392,8 +393,8 @@ class _MaterialControlsState extends State<MaterialControls>
       },
       child: Container(
         alignment: Alignment.center,
-        color: Colors
-            .transparent, // The Gesture Detector doesn't expand to the full size of the container without this; Not sure why!
+        color: Colors.transparent,
+        // The Gesture Detector doesn't expand to the full size of the container without this; Not sure why!
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -308,6 +308,7 @@ class ChewieController extends ChangeNotifier {
     this.hideControlsTimer = defaultHideControlsTimer,
     this.controlsSafeAreaMinimum = EdgeInsets.zero,
     this.onTapPlaybackSpeed,
+    this.adWidget,
   }) : assert(
           playbackSpeeds.every((speed) => speed > 0),
           'The playbackSpeeds values must all be greater than 0',
@@ -365,6 +366,7 @@ class ChewieController extends ChangeNotifier {
       ChewieControllerProvider,
     )? routePageBuilder,
     VoidCallback? onTapPlaybackSpeed,
+    Widget? adWidget,
   }) {
     return ChewieController(
       draggableProgressBar: draggableProgressBar ?? this.draggableProgressBar,
@@ -420,6 +422,7 @@ class ChewieController extends ChangeNotifier {
       progressIndicatorDelay:
           progressIndicatorDelay ?? this.progressIndicatorDelay,
       onTapPlaybackSpeed: onTapPlaybackSpeed ?? this.onTapPlaybackSpeed,
+      adWidget: adWidget ?? this.adWidget,
     );
   }
 
@@ -580,6 +583,9 @@ class ChewieController extends ChangeNotifier {
 
   /// Phuc: event when tap playback speed
   final VoidCallback? onTapPlaybackSpeed;
+
+  /// Phuc: add ad
+  final Widget? adWidget;
 
   static ChewieController of(BuildContext context) {
     final chewieControllerProvider =
