@@ -106,6 +106,10 @@ class _MaterialControlsState extends State<MaterialControls>
                           _buildSubtitles(context, chewieController.subtitle!),
                     ),
                   _buildBottomBar(context),
+                  (chewieController.adWidget != null) &&
+                      (chewieController.isFullScreen)
+                      ? chewieController.adWidget!
+                      : const SizedBox(height: 10)
                 ],
               ),
             ],
@@ -300,10 +304,6 @@ class _MaterialControlsState extends State<MaterialControls>
                     ),
                   ),
                 ),
-              (chewieController.adWidget != null) &&
-                      (chewieController.isFullScreen)
-                  ? chewieController.adWidget!
-                  : const SizedBox(height: 10)
             ],
           ),
         ),
