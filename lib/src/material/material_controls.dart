@@ -300,7 +300,10 @@ class _MaterialControlsState extends State<MaterialControls>
                     ),
                   ),
                 ),
-              chewieController.adWidget ?? const SizedBox(height: 10)
+              (chewieController.adWidget != null) &&
+                      (chewieController.isFullScreen)
+                  ? chewieController.adWidget!
+                  : const SizedBox(height: 10)
             ],
           ),
         ),
